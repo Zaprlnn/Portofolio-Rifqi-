@@ -1,9 +1,14 @@
-
 {
   "version": 2,
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/Portofolio.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
