@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rifqi | Portofolio</title>
+<!-- Cari teks yang diawali "ISI:" lalu ganti dengan datamu sendiri -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f3f5;
+  --bg-strong:#e7e9ee;
+  --surface:rgba(255,255,255,0.42);
+  --surface-strong:rgba(255,255,255,0.64);
+  --ink:#1f2330;
+  --muted:#646b7a;
+  --accent:#5d5fef;
+  --accent-2:#7bb8ff;
+  --accent-soft:#edf0ff;
+  --line:rgba(138,146,166,0.22);
+  --shadow:0 20px 50px rgba(110, 119, 142, 0.18);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#1a1c22;
+    --bg-strong:#22252d;
+    --surface:rgba(255,255,255,0.08);
+    --surface-strong:rgba(255,255,255,0.12);
+    --ink:#edf1f7;
+    --muted:#b3b9c7;
+    --accent:#8ea5ff;
+    --accent-2:#7bd7ff;
+    --accent-soft:rgba(142,165,255,0.12);
+    --line:rgba(255,255,255,0.1);
+    --shadow:0 24px 60px rgba(8, 10, 18, 0.42);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(141, 118, 255, 0.18), transparent 26%),
+    radial-gradient(circle at right center, rgba(94, 235, 196, 0.18), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-strong) 100%);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:17px;
+  min-height:100vh;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:28px 28px;
+  mask-image:radial-gradient(circle at center, black 40%, transparent 100%);
+  pointer-events:none;
+}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.1}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+nav{
+  position:sticky;top:0;z-index:10;
+  backdrop-filter:blur(16px);
+  background:rgba(244,241,255,0.62);border-bottom:1px solid var(--line)
+}
+@media (prefers-color-scheme:dark){nav{background:rgba(18,19,33,0.72)}}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:1.2rem;font-weight:800}
+.brand-mark{
+  width:12px;height:12px;border-radius:50%;display:inline-block;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  box-shadow:0 0 18px rgba(93,75,219,0.7)
+}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.95rem}
+nav ul a{color:var(--muted);text-decoration:none;transition:color .2s ease}
+nav ul a:hover{color:var(--accent)}
+
+.hero{padding:72px 0 52px}
+.hero-shell{
+  display:grid;grid-template-columns:1.45fr .85fr;align-items:center;gap:32px
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+  background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.28);color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:700;
+  backdrop-filter:blur(10px) saturate(1.05);-webkit-backdrop-filter:blur(10px) saturate(1.05)
+}
+.eyebrow::before{
+  content:"";display:block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+}
+.hero h1{font-size:clamp(2.9rem,6vw,5.3rem);font-weight:800;letter-spacing:-.045em;margin-top:18px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.role{margin-top:18px;font-size:1.18rem;color:var(--muted);max-width:32ch}
+.meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.meta span{
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.26);padding:7px 14px;border-radius:999px;
+  font-size:.9rem;color:var(--ink);backdrop-filter:blur(8px) saturate(1.05);-webkit-backdrop-filter:blur(8px) saturate(1.05)
+}
+.btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:14px 22px;border-radius:14px;font-weight:700;text-decoration:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+  box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:rgba(255,255,255,0.42);color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+
+.profile-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
+  border:1px solid rgba(255,255,255,0.26);border-radius:26px;padding:24px;
+  backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:0 18px 40px rgba(119, 125, 142, 0.12)
+}
+.avatar{
+  width:72px;height:72px;border-radius:22px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
+  font-weight:800;font-size:1.4rem;letter-spacing:.08em;box-shadow:0 18px 30px rgba(93,75,219,0.3)
+}
+.profile-info{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.profile-card strong{display:block;margin-top:8px;font-size:1.14rem}
+.mini-list{list-style:none;margin-top:18px;display:grid;gap:12px}
+.mini-list li{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.96rem}
+.mini-list li span:first-child{color:var(--ink);font-weight:600}
+
+section{padding:60px 0;border-top:1px solid var(--line)}
+section h2{font-size:2.05rem;margin-bottom:18px;position:relative;display:inline-block}
+section h2::after{
+  content:"";display:block;width:52%;height:8px;border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));margin-top:8px;opacity:.9
+}
+.about{max-width:72ch}
+.about p+p{margin-top:14px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+  border:1px solid rgba(255,255,255,0.2);border-radius:22px;padding:24px;
+  backdrop-filter:blur(14px) saturate(1.08);-webkit-backdrop-filter:blur(14px) saturate(1.08);
+  box-shadow:0 12px 28px rgba(120, 126, 142, 0.06);transition:transform .25s ease, box-shadow .25s ease
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 30px rgba(32,28,59,0.09)}
+.card h3{font-size:1.35rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.98rem}
+.tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.tags span{
+  font-size:.8rem;background:var(--accent-soft);border:1px solid rgba(93,75,219,0.12);
+  padding:6px 10px;border-radius:999px;color:var(--ink)
+}
+.card a.more{display:inline-block;margin-top:16px;font-weight:600}
+
+.skills{display:flex;flex-wrap:wrap;gap:12px}
+.skills span{
+  border:1px solid var(--line);padding:10px 16px;border-radius:14px;background:rgba(255,255,255,0.55);
+  color:var(--ink);font-weight:500
+}
+
+.contact-box{
+  background:linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:22px 24px;
+  backdrop-filter:blur(16px) saturate(1.1);-webkit-backdrop-filter:blur(16px) saturate(1.1)
+}
+.contact ul{list-style:none;display:grid;gap:14px}
+.contact li{padding:8px 0;border-bottom:1px solid var(--line)}
+.contact li:last-child{border-bottom:none}
+
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+
+@media (max-width:820px){
+  .hero-shell{grid-template-columns:1fr}
+  .profile-card{max-width:420px}
+}
+@media (max-width:560px){
+  nav ul{gap:12px;font-size:.88rem}
+  nav .wrap{height:64px;padding:0 16px}
+  .hero{padding-top:54px}
+  .btns{flex-direction:column;align-items:stretch}
+  .btn{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Rifqi</b>
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#skill">Skill</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-shell">
+    <div class="hero-copy">
+      <p class="eyebrow">Mahasiswa Informatika</p>
+      <h1>Halo, aku <span>Rifqi.</span></h1>
+      <p class="role">Mahasiswa Informatika yang suka mendesain, mengedit, serta bermusik.</p>
+      <div class="meta">
+        <span>Muhammad Rifqi Ananta</span>
+        <span>2300018203</span>
+        <span>Informatika, FTI UAD</span>
+      </div>
+      <div class="btns">
+        <a class="btn" href="tel:083189087838">Hubungi aku</a>
+        <a class="btn alt" href="#proyek">Lihat proyek</a>
+      </div>
+    </div>
+
+    <aside class="profile-card" aria-label="Status profil">
+      <div class="avatar">RA</div>
+      <div class="profile-info">
+        <div>
+          <span class="label">Status</span>
+          <strong>Available for creative work</strong>
+        </div>
+      </div>
+      <ul class="mini-list">
+        <li><span>Focus</span><span>Design</span></li>
+        <li><span>Hobi</span><span>Musik</span></li>
+        <li><span>Campus</span><span>UAD</span></li>
+      </ul>
+    </aside>
+  </div>
+</header>
+
+<main>
+  <section id="tentang">
+    <div class="wrap about">
+      <h2>Tentang aku</h2>
+      <p>Namaku Muhammad Rifqi Ananta (NIM 2300018203), mahasiswa Program Studi Informatika di Universitas Ahmad Dahlan. Aku punya skill di desain grafis karena suka mendesain dan mengedit, serta bermusik di waktu luang. Sesekali aku juga membuat desain web.</p>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <div class="wrap">
+      <h2>Proyek</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Poster BAND </h3>
+          <p>Poster BAND lokal Yogyakarta GIGS</p>
+          <div class="tags"><span>Desain grafis</span><span>Tools yang digunakan</span></div>
+        </article>
+        <article class="card">
+          <h3>PETA INTERAKTIF GEOGRAFIS</h3>
+          <p>Peta Interaktif Geografis daerah Pangkal Pinang</p>
+          <div class="tags"><span>Desain web</span><span>Tools yang digunakan</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skill">
+    <div class="wrap">
+      <h2>Skill</h2>
+      <div class="skills">
+        <span>Desain grafis</span>
+        <span>Editing foto &amp; video</span>
+        <span>Desain web</span>
+        <span>Tools (Photoshop, Canva, Figma, dll.)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact">
+    <div class="wrap">
+      <h2>Kontak</h2>
+      <div class="contact-box">
+        <ul>
+          <li>Email: <a href="mailto:2300018203@webmail.uad.ac.id">2300018203@webmail.uad.ac.id</a></li>
+          <li>No kontak: <a href="tel:081373471669">081373471669</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Muhammad Rifqi Ananta. Informatika, Universitas Ahmad Dahlan.</div>
+</footer>
+
+</body>
+</html>
